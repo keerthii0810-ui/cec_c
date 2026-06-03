@@ -1,0 +1,57 @@
+#include<iostream>
+#include<vector>
+#include<string>
+#include<algorithm>
+using namespace std;
+template<typename T>
+class storemanager{
+    private:
+    vector<T> inventory;
+    public:
+    void addscore(T score){
+        inventory.push_back(score);
+    }
+    T getaverage(){
+        if(scores.empty)
+        return T();
+            T sum=0;
+            for(T s:scores)sum+=s;
+            return sum/scores.size();
+        }
+        T gethighest(){
+            return *max_element(scores.begin(),scores.end());
+        }
+        T getlowest(){
+            return *min_element(scores.begin(),scores.end());
+        }
+        T getcount(){
+            return scores.size();
+        }
+        void displayall(){
+            cout<<"scores"<<endl;
+            for(T s:scores){
+                cout<<s<<endl;
+            }
+        }
+    };
+    int main(){
+        storemanager<int>mathscores;
+        mathscores.addscore(85);
+        mathscores.addscore(92);
+        mathscores.addscore(78);
+            cout<<"===math scores==="<<endl;
+            mathscores.displayall();
+            cout<<"average:"<<mathscores.getaverage()<<endl;
+            cout<<"highest:"<<mathscores.gethighest()<<endl;
+            cout<<"lowest:"<<mathscores.getlowest()<<endl;
+            cout<<"count:"<<mathscores.getcount()<<endl;
+            storemanager<double>sciencescores;
+            sciencescores.addscore(88.5);
+            sciencescores.addscore(91.2);
+            sciencescores.addscore(79.8);
+            cout<<"\n===science scores==="<<endl;
+            sciencescores.displayall();
+            cout<<"average:"<<sciencescores.getaverage()<<endl;
+            
+                return 0;
+    }
